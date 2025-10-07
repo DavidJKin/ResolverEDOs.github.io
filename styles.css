@@ -1,0 +1,168 @@
+/* --- 1. Estilos Globales y Fondo --- */
+:root {
+    --primary-color: #5b86e5;
+    --secondary-color: #36d1dc;
+    --bg-color: #508b40;
+    --text-color: #cbccc7;
+    --card-bg: #275086;
+    --shadow-light: #9d5c5c;
+    --shadow-dark: #d1d9e6;
+    --radius: 15px;
+}
+
+body {
+    /* Nueva fuente 'Poppins' */
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+/* --- 2. Contenedor Principal y Tarjetas (Estilo Neumórfico) --- */
+.container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.titulo h1 {
+    font-weight: 700;
+    font-size: 2.2em;
+    color: #3b6ab1;
+}
+
+.titulo h2 {
+    font-weight: 400;
+    font-size: 1.2em;
+    margin-top: -15px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 30px;
+    /* La sombra que crea el efecto de relieve */
+    box-shadow: 8px 8px 16px var(--shadow-dark), 
+                -8px -8px 16px var(--shadow-light);
+}
+
+/* --- 3. Panel de Controles y Entradas --- */
+.panel-control {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.grupo-input label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.grupo-input input[type="number"] {
+    background: var(--bg-color);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 16px;
+    color: var(--text-color);
+    /* Sombra interior para efecto de profundidad */
+    box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+                inset -4px -4px 8px var(--shadow-light);
+    transition: box-shadow 0.3s ease;
+}
+
+.grupo-input input[type="number"]:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 4px var(--shadow-dark), 
+                inset -2px -2px 4px var(--shadow-light);
+}
+
+/* --- 4. Botón Principal con Gradiente --- */
+button#resolverBtn {
+    background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
+    color: rgb(178, 37, 37);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px; /* Botón tipo píldora */
+    cursor: pointer;
+    margin-bottom: 30px;
+    box-shadow: 6px 6px 12px var(--shadow-dark), 
+                -6px -6px 12px var(--shadow-light);
+    transition: all 0.2s ease-in-out;
+}
+
+button#resolverBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 8px 8px 16px var(--shadow-dark), 
+                -8px -8px 16px var(--shadow-light);
+}
+
+button#resolverBtn:active {
+    transform: scale(0.98);
+}
+
+/* --- 5. Panel de Resultados Mejorado --- */
+#panel-solucion {
+    text-align: left;
+    min-height: 100px;
+}
+
+#panel-solucion .placeholder {
+    color: #8a9bb3;
+    font-style: italic;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.paso-a-paso {
+    border-bottom: 2px dashed #d1d9e6;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.paso-a-paso:last-child {
+    border-bottom: none;
+}
+
+.paso-a-paso h4 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.formula-caso {
+    background-color: #324252;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.solucion-final {
+    margin-top: 20px;
+}
+
+.solucion-final h4 {
+    color: #28a745;
+    font-size: 1.2em;
+}
+
+.solucion-final h3 {
+    background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5em;
+    text-align: center;
+}

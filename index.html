@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solucionador de EDOs de 2º Orden</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">
+            <h1> Cacualar de EDOs de 2º Orden</h1>
+            <h2>Forma: \( a y'' + b y' + c y = 0 \)</h2>
+        </div>
+        
+        <div class="panel-control card">
+            <div class="grupo-input">
+                <label for="coefA">Coeficiente a:</label>
+                <input type="number" id="coefA" value="1">
+            </div>
+            <div class="grupo-input">
+                <label for="coefB">Coeficiente b:</label>
+                <input type="number" id="coefB" value="2">
+            </div>
+            <div class="grupo-input">
+                <label for="coefC">Coeficiente c:</label>
+                <input type="number" id="coefC" value="5">
+            </div>
+        </div>
+
+        <button id="resolverBtn"> Resolver</button>
+
+        <div id="panel-solucion" class="card">
+            <p class="placeholder">Ingresa los coeficientes y presiona "Resolver" para ver la solución detallada.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
