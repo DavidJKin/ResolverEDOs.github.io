@@ -1,184 +1,185 @@
-/* Tema oscuro refinado — reemplaza styles.css existente (no tocar script.js)
-   Cambios: mayores contrastes, modo accesible, transición suave, variantes para inputs, botón, y tipografía.
-*/
-:root{
-  --bg: #0b0d12;           /* fondo principal muy oscuro */
-  --panel: linear-gradient(180deg,#0f1724 0%, #0b1220 100%);
-  --card-bg: rgba(255,255,255,0.03);
-  --border: rgba(83,127,231,0.15);
-  --accent: #5a86ff;      /* acento principal */
-  --accent-2: #3bd1c4;    /* color secundario para contrastes */
-  --muted: #9aa4c3;       /* texto secundario */
-  --text: #e6eef8;        /* texto principal */
-  --error: #ff6b6b;
-  --radius: 14px;
-  --glass: rgba(255,255,255,0.02);
+body {
+  /* Usamos la fuente 'Poppins' que ya estás importando. Es amigable y moderna. */
+  font-family: 'Poppins', sans-serif;
+  
+  /* Un fondo de color menta muy claro, más "natural" que el gris */
+  background-color: #f0f8f7; 
+  color: #333;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
-/* Reset y base */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: radial-gradient(1200px 600px at 10% 10%, rgba(90,134,255,0.06), transparent 10%), var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:28px;
+.container {
+  width: 100%;
+  max-width: 640px;
+  
+  /* Un fondo blanco limpio para la tarjeta principal */
+  background: #ffffff; 
+  border-radius: 16px; /* Bordes más redondeados */
+  
+  /* Una sombra más suave y difusa */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); 
+  padding: 32px 40px;
+  text-align: center;
 }
 
-.container{
-  width:100%;
-  max-width:920px;
-  margin:0 auto;
-  text-align:center;
-  gap:20px;
-  display:flex;
-  flex-direction:column;
+.titulo h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  
+  /* Un color azul-gris oscuro, fuerte pero no tan duro como el negro */
+  color: #264653; 
 }
 
-.titulo h1{
-  font-size:2.2rem;
-  margin:0 0 4px 0;
-  letter-spacing:0.2px;
-  color:var(--text);
-}
-.titulo h2{
-  margin:0 0 18px 0;
-  font-weight:400;
-  color:var(--muted);
+.titulo h3 {
+  font-weight: 600; /* Le damos un poco más de peso */
+  font-size: 1.2rem;
+  color: #2a9d8f; /* Un verde azulado (teal) como color de acento */
+  margin-top: 4px;
+  margin-bottom: 8px;
 }
 
-/* Tarjetas */
-.card{
-  background: var(--card-bg);
-  background-image: var(--panel);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:26px;
-  box-shadow: 0 6px 30px rgba(2,6,23,0.6), 0 1px 0 rgba(255,255,255,0.02) inset;
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-.card:hover{transform:translateY(-6px)}
-
-/* Panel de controles */
-.panel-control{
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-  gap:18px;
-  margin-bottom:20px;
-  text-align:left;
-}
-.grupo-input label{
-  display:block;
-  font-weight:600;
-  margin-bottom:8px;
-  color:var(--muted);
-  font-size:0.92rem;
+.titulo h2 {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #264653; /* Mismo color que el título principal */
+  margin-top: 0;
 }
 
-.grupo-input input[type="number"]{
-  width:100%;
-  padding:12px 14px;
-  bordert-align:left;
-  border-radius:12px;
-  padding:18px;
-  border:1px solid rgba(255,255,255,0.03);
-  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-}
-#panel-solucion .placeholder{
-  color:var(--muted);
-  font-style:italic;
-  text-align:center;
-  padding:28px 6px;
+.card {
+  background: #ffffff;
+  
+  /* Quitamos el borde y la sombra interna, el contenedor principal ya nos da el contexto */
+  border: none;
+  border-radius: 12px;
+  padding: 26px 32px;
+  margin-top: 24px;
 }
 
-.paso-a-paso{
-  padding-bottom:12px;
-  margin-bottom:12px;
-  border-bottom:1px dashed rgba(255,255,255,0.03);
-}
-.paso-a-paso h4{
-  margin:0 0 8px 0;
-  color:var(--accent-2);
-  font-weight:700;
-}
-.paso-a-paso p{color:var(--text); margin:6px 0}
-
-.formula-caso{
-  background: linear-gradient(90deg, rgba(90,134,255,0.06), rgba(59,209,196,0.02));
-  border-left:4px solid var(--accent);
-  padding:12px 14px;
-  margin:12px 0;
-  border-radius:6px 6px 6px 6px;
-  color:var(--text);
+/* Estilo específico para el panel de inputs */
+.panel-control {
+  /* Un fondo muy sutil para diferenciar el panel de control */
+  background: #fcfcfc;
+  border: 1px solid #eef2f1;
 }
 
-.solucion-final h4{ color: #6ee7b7; margin:0 0 6px 0 }
-.solucion-final h3{
-  margin:6px 0 0 0;
-  text-align:center;
-  color:var(--accent);
-  font-size:1.35rem;
-  text-shadow:0 0 18px rgba(90,134,255,0.12);
+input[type="number"] {
+  width: 100%;
+  
+  /* Borde más suave por defecto */
+  border: 2px solid #dee2e6;
+  border-radius: 8px; /* Bordes más suaves */
+  padding: 14px 10px;
+  font-size: 1.1rem;
+  color: #495057;
+  background-color: #ffffff;
+  outline: none;
+  
+  /* Transición suave */
+  transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
 
-/* Mensajes de error */
-#error, .error{ color: var(--error); font-weight:700 }
-
-/* Responsivo */
-@media (max-width:520px){
-  .titulo h1{font-size:1.5rem}
-  .card{padding:18px}
-  button#resolverBtn{width:100%}
+input[type="number"]:focus {
+  /* Al seleccionar, usamos el color de acento */
+  border-color: #2a9d8f; 
+  
+  /* Añadimos una sombra sutil de "resplandor" */
+  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.15);
 }
 
-/* Accesibilidad: enfoque visible para teclado */
-:focus{outline:none}
-input:focus, button:focus{box-shadow:0 8px 30px rgba(83,127,231,0.09); border-color:var(--accent)}
-
-/* Pequeño pulido: animación al insertar la solución */
-#panel-solucion .paso-a-paso{opacity:0; transform:translateY(6px); animation: slideIn .28s ease forwards}
-@keyframes slideIn{to{opacity:1; transform:none}}
--radius:10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border:1px solid rgba(255,255,255,0.04);
-  color:var(--text);
-  font-size:1rem;
-  outline:none;
-  transition: box-shadow .15s ease, border-color .15s ease, transform .12s ease;
-}
-.grupo-input input[type="number"]::placeholder{color:rgba(255,255,255,0.2)}
-.grupo-input input[type="number"]:focus{
-  border-color:var(--accent);
-  box-shadow: 0 6px 20px rgba(90,134,255,0.08), 0 0 0 4px rgba(90,134,255,0.06);
-  transform:translateY(-1px);
+button#resolverBtn {
+  margin-top: 20px;
+  
+  /* Usamos el color de acento principal para el botón (call to action) */
+  background-color: #2a9d8f; 
+  border: none;
+  color: #ffffff;
+  padding: 14px 28px;
+  font-size: 1.15rem;
+  border-radius: 8px; /* Redondeo igual al de los inputs */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-weight: 600;
 }
 
-/* Botón principal */
-button#resolverBtn{
-  appearance:none;
-  -webkit-appearance:none;
-  border:0;
-  padding:14px 28px;
-  border-radius:999px;
-  background: linear-gradient(90deg,var(--accent), #2d63ff);
-  color:white;
-  font-weight:700;
-  font-size:1.05rem;
-  cursor:pointer;
-  box-shadow: 0 10px 30px rgba(42,64,150,0.2), 0 2px 0 rgba(255,255,255,0.02) inset;
-  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
-  margin-bottom:18px;
+button#resolverBtn:hover {
+  /* Un tono más oscuro del acento al pasar el ratón */
+  background-color: #238276; 
 }
-button#resolverBtn:hover{transform:translateY(-3px); filter:brightness(1.03)}
-button#resolverBtn:active{transform:translateY(-1px)}
 
-/* Panel de solucion */
-#panel-solucion{
-  min-height:140px;
-  tex
+button#resolverBtn:active {
+  /* Efecto de "presionado" */
+  transform: scale(0.98);
+}
+
+#panel-solucion {
+  margin-top: 28px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #264653; /* Color de texto principal */
+  
+  /* Reemplazamos el borde duro por un fondo de color muy suave */
+  background: #f8fdfc;
+  border: 1px solid #d6e8e5; /* Un borde sutil que combina */
+  border-radius: 12px;
+  padding: 22px;
+  user-select: all;
+  text-align: left; /* Mejor para leer los pasos */
+}
+
+/* Estilos para los pasos de la solución generados por JS */
+#panel-solucion h4 {
+  color: #2a9d8f;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 6px;
+}
+
+#panel-solucion .solucion-final h3 {
+  /* La solución final destacada */
+  background: #e6f2f0;
+  color: #264653;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+@media (max-width: 600px) {
+  /* Ajustes responsivos se mantienen */
+  body {
+    padding: 20px;
+  }
+  
+  .container {
+    padding: 24px 20px;
+  }
+
+  .titulo h1 {
+    font-size: 1.8rem;
+  }
+  
+  .titulo h3 {
+    font-size: 1.1rem;
+  }
+
+  input[type="number"] {
+    font-size: 1rem;
+  }
+
+  button#resolverBtn {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  #panel-solucion {
+    font-size: 1.2rem;
+    padding: 18px;
+  }
+}
